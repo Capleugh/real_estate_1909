@@ -39,11 +39,12 @@ class House
   def rooms_by_category
     room_type = Hash.new
     @rooms.each do |room|
-      # require "pry"; binding.pry
-      
-      room_type[room.category] = room
-
-
+      if room_type[room.category]
+        # require "pry"; binding.pry
+        room_type[room.category] << room
+      else
+        room_type[room.category] = [room]
+      end
     end
     room_type
   end
