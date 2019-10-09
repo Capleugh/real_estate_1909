@@ -10,4 +10,11 @@ class House
   def add_room(room)
     @rooms << room
   end
+
+  def rooms_from_category(category)
+    @rooms.find_all do |room|
+      # require "pry"; binding.pry
+      room.category == category
+    end
+  end
 end
