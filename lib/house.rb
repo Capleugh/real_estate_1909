@@ -35,4 +35,16 @@ class House
       room.area
     end
   end
+
+  def rooms_by_category
+    room_type = Hash.new
+    @rooms.each do |room|
+      # require "pry"; binding.pry
+      
+      room_type[room.category] = room
+
+
+    end
+    room_type
+  end
 end
