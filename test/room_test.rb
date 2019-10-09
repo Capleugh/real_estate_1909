@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/room'
+require_relative '../lib/room'
 
 class RoomTest < Minitest::Test
   def setup
@@ -15,9 +15,6 @@ class RoomTest < Minitest::Test
     assert_equal :bedroom, @room.category
     assert_equal 10, @room.length
     assert_equal 13, @room.width
-  end
-
-  def test_area
     assert_equal 130, @room.area
   end
 end
