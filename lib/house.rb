@@ -40,10 +40,15 @@ class House
     room_type = Hash.new
     @rooms.each do |room|
       if room_type[room.category]
+        # if this key exists
         # require "pry"; binding.pry
         room_type[room.category] << room
+        # assume that room is and array and shovel each room that matches room.category into the array
       else
         room_type[room.category] = [room]
+        # otherwise, set an array of room that matches the category as the value for the corresponding room.category key
+
+        # I would love feedback if my comments aren't accurately describing what's happening here!
       end
     end
     room_type
